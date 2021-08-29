@@ -1,0 +1,86 @@
+.page__header {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: $color-bg;
+  padding: 20px;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.line {
+  border-top: 1px solid $color-Dark-Grayish-Blue;
+  height: 2px;
+  margin: 10px 0px;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background: linear-gradient(70deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  position: relative;
+  height: 16px;
+  width: 30px;
+  transform: scale(1.5);
+  &__ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 12px;
+    width: 12px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+  }
+}
+
+.checkbox:checked + .label .label__ball {
+  transform: translateX(14px);
+}
+
+.theme {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  &__toggle {
+    justify-self: end;
+  }
+}
+
+@media all and (min-width: 1200px) {
+  .page__header {
+    padding: 40px 100px;
+    grid-template-columns: 8fr 2fr;
+  }
+  .followers {
+    grid-row-start: 2;
+  }
+  .line {
+    border-top: 0px solid $color-Dark-Grayish-Blue;
+  }
+  .theme {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-template-columns: 1fr 50px;
+    &__text {
+      justify-self: end;
+    }
+    &__toggle {
+      height: 20px;
+    }
+  }
+} ;
