@@ -1,1 +1,1 @@
-"use strict";console.log(">> Ready :)");
+"use strict";const change=document.getElementById("check");function checkingCheckbox(){let e=change.checked;document.getElementById("styles").href=e?"./assets/css/mainDark.css":"./assets/css/main.css"}change.addEventListener("change",checkingCheckbox,!1);
